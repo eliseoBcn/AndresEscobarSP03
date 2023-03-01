@@ -9,7 +9,7 @@ public class App
 {
     public static void main( String[] args )
     {
-    	ArrayList<Month> listameses = new ArrayList();
+    	ArrayList<Month> listameses = new ArrayList<>();
     	
     	
     	listameses.add(new  Month("Enero") );
