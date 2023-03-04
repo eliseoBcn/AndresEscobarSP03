@@ -3,10 +3,12 @@ package n1ejercicio3;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import java.util.Scanner;
 
  
 
 public class JugarCapitales {
+    //public static Scanner teclado = new Scanner(System.in);
 	public String rutaTXT = "C:\\Users\\usuario\\CURSOBCNACTIVA\\Countries.txt";
 	   
 	public static void main(String[] args) {
@@ -20,7 +22,7 @@ public class JugarCapitales {
 			try {
 				 oks = "S";
 				 	texto  =  MetodosEntrada.llegirString("Introduzca nombre : ");
-			}   catch(Exception   e) {
+			}   catch(	Exception   e) {
 				 oks = "N";
 				System.out.println( "Introduzca nombre  " +e.getMessage());
 			}
@@ -38,7 +40,7 @@ public class JugarCapitales {
 				  Object key = crunchifyKeys[new Random().nextInt(crunchifyKeys.length)];
 				  System.out.println("Pais -->  " +  key  );
 	 			  String capital = paisescapitales.get(key);
-				  String respuesta =  MetodosEntrada.llegirString("Introduzca capital : ");
+				  String respuesta =  MetodosEntrada.llegirString("Introduzca capital : ").trim();
 				  if( capital.equals(respuesta) )  { 
 					  puntos = puntos + 1  ;
 					  System.out.println("Capital aceptada. Total puntos " + puntos );
@@ -48,7 +50,7 @@ public class JugarCapitales {
 			}
 			}while( numeroveces < 15)  ;	
 		
-			
+			System.out.println( "Fin del programa  ");
 			EscribeFichero.EscribeFichero(nombre, puntos); 
 			
 	}
